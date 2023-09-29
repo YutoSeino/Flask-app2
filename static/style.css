@@ -1,0 +1,321 @@
+.content {
+  text-align: center;
+}
+
+.back-btn {
+  display: inline-block;
+  padding: 40px 50px;
+  text-decoration: none;
+  background: rgb(228, 226, 223);
+  color: #333;
+}
+
+.back-btn:hover {
+  transition: all .2s linear;
+  color: #fff;
+}
+
+.btn-cap {
+  display: inline-block;
+  padding: 40px 50px;
+  text-decoration: none;
+  background: rgb(228, 226, 223);
+  color: #333;
+}
+
+.btn-cap:hover {
+  transition: all .2s linear;
+  color: rgb(249, 192, 112);
+}
+
+body {
+  background-image: url(style_image/img1.jpeg);
+   /* 画像を常に天地左右の中央に配置 */
+   background-position: center center;
+   
+   /* 画像をタイル状に繰り返し表示しない */
+   background-repeat: no-repeat;
+    
+   /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+   background-attachment: fixed;
+    
+   /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+   background-size: cover;
+}
+
+/* テーブルの親要素のスタイル */
+.center-table {
+  text-align: center; /* 中央揃えを設定 */
+}
+
+table {
+  border-collapse: collapse;
+  width: 50%;
+  margin: 0 auto; /* テーブルを中央揃え */
+}
+
+/* 行のスタイル */
+tr {
+  background-color: #f2f2f2; /* 背景色を設定 */
+  border-bottom: 2px solid #ddd; /* 下部のボーダーを設定 */
+}
+
+/* セルのスタイル */
+td {
+  padding: 8px; /* セル内の余白を設定 */
+  text-align: center; /* テキストの中央寄せを設定 */
+}
+
+/* 一番上の行のセルのスタイル */
+tr:first-child td {
+  background-color: #4CAF50; /* 一番上の行の背景色を設定 */
+  color: white; /* テキストの色を設定 */
+  font-weight: bold; /* テキストの太字を設定 */
+}
+
+/* 一番上の行の最初のセルを結合 */
+tr:first-child td:first-child {
+  border-top-left-radius: 10px; /* 左上の角を丸くする */
+  border-bottom-left-radius: 10px; /* 左下の角を丸くする */
+}
+
+/* 一番上の行の最後のセルを結合 */
+tr:first-child td:last-child {
+  border-top-right-radius: 10px; /* 右上の角を丸くする */
+  border-bottom-right-radius: 10px; /* 右下の角を丸くする */
+}
+
+.radio {
+  margin: 0 auto;
+}
+
+.radio-003 {
+  border: none;
+  margin: 0 auto;
+}
+
+.radio-003 label {
+  display: flex;
+  align-items: center;
+  gap: 0 .5em;
+  position: relative;
+  max-width: 200px;
+  margin-bottom: .4em;
+  padding: .5em .7em;
+  border: 1px solid #2589d0;
+  border-radius: 25px;
+  background-color: #2589d026;
+  cursor: pointer;
+}
+
+.radio-003 label:has(:checked) {
+  background-color: #2589d0;
+  color: #fff;
+}
+
+.radio-003 label::before,
+.radio-003 label:has(:checked)::after {
+  border-radius: 50%;
+  content: '';
+}
+
+.radio-003 label::before {
+  width: 14px;
+  height: 14px;
+  background-color: #fff;
+}
+
+.radio-003 label:has(:checked)::after {
+  position: absolute;
+  top: 50%;
+  left: calc(7px + .7em);
+  transform: translate(-50%, -50%);
+  width: 7px;
+  height: 7px;
+  background-color: #2589d0;
+}
+
+.radio-003 input {
+  display: none;
+}
+
+.button {
+  transition: .3s; /* 変化時間 0.3秒 */
+  padding: 24px 48px; /* 内側の余白設定 */
+  border-radius: 12px; /* 要素の角を丸くする */
+  background-color: #2ecadf; /* 背景色指定 */
+  text-decoration: none; /* aタグの下線を非表示に */
+  color: #fff; /* 文字色 */
+  font-size: 1.5rem; /* フォントサイズ */
+}
+
+.button:hover { 
+  transition: .3s; /* 変化時間 0.3秒 */
+  background-color: #00a9de; /* 背景色 */
+}
+
+.link-button {
+  margin: auto;
+}
+
+.select-image-model {
+  display: flex;
+  margin-top: 100px;
+}
+
+.select-image-model>div {
+  width: 100%;
+}
+
+.sample1 {
+  width: 300px;
+  padding: 10px;
+}
+
+.button-010 {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 250px;
+  margin: 0 auto;
+  padding: 1em 2em;
+  overflow: hidden;
+  border: none;
+  border-radius: 5px;
+  background-color: #2589d0;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.button-010::before {
+  display: block;
+  position: absolute;
+  top: -50%;
+  left: -30%;
+  transform: rotate(30deg);
+  width: 70px;
+  height: 100px;
+  content: '';
+  background-image: linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+  background-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(255, 255, 255, 0)));
+  animation: animation-button-010 2s infinite linear;
+}
+
+@keyframes animation-button-010 {
+  17% {
+      left: 120%;
+  }
+  100% {
+      left: 120%;
+  }
+}
+
+.button-010:hover {
+  background-color: #1579c0;
+}
+
+.form-image {
+  padding: 5px 20px;
+  color: #ffffff;
+  background-color: #1579c0;
+  cursor: pointer;
+  border-radius:10px;
+  transition: .3s;
+}
+.form-image:hover {
+  opacity: 0.8;
+}
+input[type="file"] {
+  display: none;
+}
+
+.capture-btn {
+  width: 500px;
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 18pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 12px;   /* 余白       */
+  background    : #1579c0;
+  ;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  opacity       : 1;           /* 透明度     */
+  transition    : .3s;         /* なめらか変化 */
+}
+.capture-btn:hover {
+  opacity       : 0.8;   
+}
+
+.button-011 {
+  text-align: center;
+}
+
+.button-011 div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transform: translateY(7px);
+  width: 150px;
+  margin: 0 auto;
+  padding: .2em 0;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #2589d0;
+  font-size: .8em;
+}
+
+.button-011 div::before,
+.button-011 div::after {
+  position: absolute;
+  top: 100%;
+  content: '';
+  clip-path: polygon(0 0, 100% 0%, 50% 100%);
+}
+
+
+.button-011 div::before {
+  width: 16px;
+  height: 8px;
+  background-color: #2589d0;
+}
+
+.button-011 div::after {
+  width: 12px;
+  height: 6px;
+  background-color: #fff;
+}
+
+.button-011 button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  margin: 0 auto;
+  padding: 1em 2em;
+  border: none;
+  border-radius: 5px;
+  background-color: #2589d0;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.button-011 button::after {
+  transform: rotate(45deg);
+  width: 5px;
+  height: 5px;
+  margin-left: 10px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  content: '';
+}
+
+.button-010 button:hover {
+  background-color: #1579c0;
+}

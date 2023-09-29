@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+<div btn-cap>
+  {% block title %}
+  撮影
+  {% endblock %}
+  
+  {% block content %}
+  <img src="{{ url_for('video_feed') }}" width="640" height="480">
+  <form action="/shoto" method="POST">
+    <input type="submit" value="撮影" class="capture-btn">
+  </form>
+</div>
+
+{% endblock %}

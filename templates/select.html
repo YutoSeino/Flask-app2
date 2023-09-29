@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block title %}
+物体検知アプリ
+{% endblock %}
+
+{% block content %}
+<div class="image_detect">
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <ulr>
+      {% for message in messages %}
+      <li><span style="color: #B22222;">{{ message }}</span></li>
+      {% endfor %}
+  </ul>
+  {% endif %}
+  {% endwith %}
+  <br>
+  <div class="button-011">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cameraModal">カメラを開く</button>
+  </div>
+  <br>
+  <div class="form">
+    <form action="/image_detect" method="post" enctype="multipart/form-data">
+      <div class="select-image-model">
+        <div class="file">
+          <label for="form-image" class="form-image">ファイルを選択</label>
+          <input type="file" name="image" accept="image/png, image/jpeg" id="form-image">
+          <br>
+          <img id="sample1" class="sample1">
+        </div>
+        <div class="radio">
+          <fieldset class="radio-003">
+            <label>
+                <input type="radio" name="radio" id="r1" value="ssd_best_100" checked/>
+                学習済みSSD
+            </label>
+            <label>
+                <input type="radio" name="radio" id="r1" value="ssd_weights200"/>
+                自作SSD
+            </label>
+          </fieldset>
+        </div>
+      </div>
+      <button type="submit" class="button-010">検出する</button>
+    </form>
+  </div>
+</div>
+<!-- カメラ表示用のモーダルウィンドウ -->
+<div class="modal fade" id="cameraModal">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h4 class="modal-title">カメラ表示</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <img src="{{ url_for('video_feed') }}" width="640" height="480">
+          </div>
+          <div class="modal-footer">
+            <form action="/shoto" method="POST" style="width: 100%;">
+              <input type="submit" value="撮影" class="capture-btn">
+            </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('form-image').addEventListener('change', function (e) {
+    // 1枚だけ表示する
+    var file = e.target.files[0];
+
+    // ファイルのブラウザ上でのURLを取得する
+    var blobUrl = window.URL.createObjectURL(file);
+
+    // img要素に表示
+    var img = document.getElementById('sample1');
+    img.src = blobUrl;
+});
+</script>
+{% endblock %}

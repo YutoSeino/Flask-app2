@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+検出結果
+{% endblock %}
+
+{% block content %}
+<div>
+  <div>
+  <img src="{{ content }}" style="width: 400px; border: 10px solid #dddddd;
+  ">
+  <img src="{{ content2 }}" style="width: 400px; border: 10px solid #dddddd;
+  ">
+  </div>
+  <div class="center-table">
+    <table>
+      <colgroup>
+        <col style="width: 50%;"> <!-- 列1の幅を設定 -->
+        <col style="width: 50%;"> <!-- 列2の幅を設定 -->
+      </colgroup>
+      <tr>
+        <td colspan="2">検出結果</td>
+      </tr>
+      <tr>
+        <td>缶</td>
+        <td>ペットボトル</td>
+      </tr>
+      <tr>
+        <td>{{ c_count }}個</td>
+        <td>{{ b_count }}本</td>
+      </tr>
+    </table>
+  </div>
+
+  <a href="/" class="back-btn">選択画面に戻る</a>
+</div>
+
+{% endblock %}
